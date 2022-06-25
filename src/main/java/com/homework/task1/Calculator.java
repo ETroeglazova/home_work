@@ -2,6 +2,10 @@ package com.homework.task1;
 
 import java.util.Scanner;
 
+/**
+ * Created by ETroeglazova 20.06.2022
+ * @author ETreoglazova
+ */
 public class Calculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
