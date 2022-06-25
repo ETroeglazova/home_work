@@ -14,25 +14,23 @@ public class Calculator {
         System.out.println("Введите второе число:");
         double secondNumber = scanner.nextDouble();
 
-        double result = 0;
-
         switch (operation) {
             case ("+"):
-                result = firstNumber + secondNumber;
+                System.out.printf("Решение: %.4f", firstNumber + secondNumber);
                 break;
             case ("-"):
-                result = firstNumber - secondNumber;
+                System.out.printf("Решение: %.4f", firstNumber - secondNumber);
                 break;
             case ("*"):
-                result = firstNumber * secondNumber;
+                System.out.printf("Решение: %.4f", firstNumber * secondNumber);
                 break;
             case ("/"):
-                result = firstNumber / secondNumber;
+                System.out.printf("Решение: %.4f", firstNumber / secondNumber);
                 break;
             default:
-                System.out.println("Некорректная операция");
+                System.err.println("Некорректная операция");
         }
 
-        System.out.printf("Решение: %.4f", result);
+
     }
 }
