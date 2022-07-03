@@ -11,17 +11,13 @@ public class MaxLengthString {
         System.out.println("Введите слова по одному с каждой строки.\n" +
                 "Количество слов соответствует размеру массива:");
 
+        int maxLength = 0;
         String[] stringArray = new String[size];
         for (int i = 0; i < size; i++) {
             stringArray[i] = scanner.next();
-        }
-
-        int maxLength = 0;
-        for (int j = 0; j < size; j++) {
-            int strLen = stringArray[j].length();
-            if (strLen > maxLength) {
+            int strLen = stringArray[i].length();
+            if (strLen > maxLength)
                 maxLength = strLen;
-            }
         }
 
         for (int k = 0; k < size; k++) {
