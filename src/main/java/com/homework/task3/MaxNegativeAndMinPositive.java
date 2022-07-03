@@ -8,10 +8,8 @@ public class MaxNegativeAndMinPositive {
         }
         int maxNegative = -11;
         int maxNegIndex = 0;
-        boolean isMaxNegChanged = false;
         int minPositive = 11;
         int minPosIndex = 0;
-        boolean isMinPosChanged = false;
 
         for (int j = 0; j < intArray.length; j++) {
             int num = intArray[j];
@@ -19,15 +17,13 @@ public class MaxNegativeAndMinPositive {
             if (num < 0 && num > maxNegative) {
                 maxNegative = num;
                 maxNegIndex = j;
-                isMaxNegChanged = true;
             } else if (num > 0 && num < minPositive) {
                 minPositive = num;
                 minPosIndex = j;
-                isMinPosChanged = true;
             }
         }
 
-        if (isMaxNegChanged && isMinPosChanged) {
+        if (maxNegative > -11 && minPositive < 11) {
             intArray[minPosIndex] = maxNegative;
             intArray[maxNegIndex] = minPositive;
         }
