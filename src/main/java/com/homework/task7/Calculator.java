@@ -1,13 +1,10 @@
-package com.homework.task4;
-
-import com.homework.task4.operations.*;
+package com.homework.task7;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculator {
     public static void main(String[] args) {
-        Operation operation = null;
         try {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Введите первое число:");
@@ -20,33 +17,24 @@ public class Calculator {
             double secondNumber = scanner.nextDouble();
 
             scanner.close();
+            Operation operation = new Operation(firstNumber, secondNumber);
 
             switch (sign) {
                 case ("+"):
-                    operation = new Addition();
+                    System.out.printf("Результат: %.4f", operation.add());
                     break;
                 case ("-"):
-                    operation = new Subtraction();
+                    System.out.printf("Результат: %.4f", operation.subtract());
                     break;
                 case ("*"):
-                    operation = new Multiplication();
+                    System.out.printf("Результат: %.4f", operation.multiply());
                     break;
                 case ("/"):
-                    operation = new Division();
+                    System.out.printf("Результат: %.4f", operation.divide());
                     break;
                 default:
-                    System.err.println("Некорректная операция");
+                    throw new RuntimeException("Некорректная операция");
             }
-
-            if (operation != null) {
-                operation.setFirstNum(firstNumber);
-                operation.setSecondNum(secondNumber);
-                System.out.printf("Результат: %.4f", operation.execute());
-            }
-            else
-                throw new RuntimeException("Ошибка выполнения. " +
-                        "Попробуйте выполнить операцию повторно.");
-
         }
         catch (InputMismatchException inputMismatchException) {
             System.err.println("Введено число в неверном формате.\n" +
